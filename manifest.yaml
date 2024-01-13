@@ -1,0 +1,62 @@
+apiVersion: keda.sh/v1alpha1
+kind: ScaledObject
+metadata:
+  name: myscaledobject
+  namespace: foobar
+spec:
+  scaleTargetRef:
+    kind: Deployment
+    name: mydeployment
+  fallback:
+    failureThreshold: 4
+    replicas: 12
+  advanced:
+    scalingModifiers:
+      formula: "max(trigger_1, trigger_2)"
+      metricType: AverageValue
+      target: "1"
+      activationTarget: "0"
+  pollingInterval: 30
+  minReplicaCount: 3
+  maxReplicaCount: 30
+  triggers:
+  - type: prometheus
+    name: trigger_1
+    metricType: AverageValue
+    metadata:
+      serverAddress: http://fake.svc.cluster.local:9090
+      threshold: "1"
+      activationThreshold: "0"
+      query: >
+        max(mymetric1{}[2m])
+  - type: prometheus
+    name: trigger_2
+    metricType: AverageValue
+    metadata:
+      serverAddress: http://fake.svc.cluster.local:9090
+      threshold: "1"
+      activationThreshold: "0"
+      query: >
+        max(mymetric2{}[2m])
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mydeployment
+  namespace: foobar
+  labels:
+    app: busybox
+spec:
+  selector:
+    matchLabels:
+      app: busybox
+  template:
+    metadata:
+      labels:
+        app: busybox
+    spec:
+      containers:
+      - name: busybox
+        image: busybox:latest
+        ports:
+        - containerPort: 8080
