@@ -1,0 +1,23 @@
+2024/01/13 04:30:23 maxprocs: Updating GOMAXPROCS=1: determined from CPU quota
+2024-01-13T04:30:23Z	INFO	setup	Starting admission webhooks
+2024-01-13T04:30:23Z	INFO	setup	KEDA Version: 2.12.1
+2024-01-13T04:30:23Z	INFO	setup	Git Commit: dc76ca70f19c22e8f0c806f84d95256d771f3dc9
+2024-01-13T04:30:23Z	INFO	setup	Go Version: go1.20.8
+2024-01-13T04:30:23Z	INFO	setup	Go OS/Arch: linux/arm64
+2024-01-13T04:30:23Z	INFO	setup	Running on Kubernetes 1.27	{"version": "v1.27.3"}
+2024-01-13T04:30:23Z	INFO	controller-runtime.builder	skip registering a mutating webhook, object does not implement admission.Defaulter or WithDefaulter wasn't called	{"GVK": "keda.sh/v1alpha1, Kind=ScaledObject"}
+2024-01-13T04:30:23Z	INFO	controller-runtime.builder	Registering a validating webhook	{"GVK": "keda.sh/v1alpha1, Kind=ScaledObject", "path": "/validate-keda-sh-v1alpha1-scaledobject"}
+2024-01-13T04:30:23Z	INFO	controller-runtime.webhook	Registering webhook	{"path": "/validate-keda-sh-v1alpha1-scaledobject"}
+2024-01-13T04:30:23Z	INFO	controller-runtime.builder	skip registering a mutating webhook, object does not implement admission.Defaulter or WithDefaulter wasn't called	{"GVK": "keda.sh/v1alpha1, Kind=TriggerAuthentication"}
+2024-01-13T04:30:23Z	INFO	controller-runtime.builder	Registering a validating webhook	{"GVK": "keda.sh/v1alpha1, Kind=TriggerAuthentication", "path": "/validate-keda-sh-v1alpha1-triggerauthentication"}
+2024-01-13T04:30:23Z	INFO	controller-runtime.webhook	Registering webhook	{"path": "/validate-keda-sh-v1alpha1-triggerauthentication"}
+2024-01-13T04:30:23Z	INFO	controller-runtime.builder	skip registering a mutating webhook, object does not implement admission.Defaulter or WithDefaulter wasn't called	{"GVK": "keda.sh/v1alpha1, Kind=ClusterTriggerAuthentication"}
+2024-01-13T04:30:23Z	INFO	controller-runtime.builder	Registering a validating webhook	{"GVK": "keda.sh/v1alpha1, Kind=ClusterTriggerAuthentication", "path": "/validate-keda-sh-v1alpha1-clustertriggerauthentication"}
+2024-01-13T04:30:23Z	INFO	controller-runtime.webhook	Registering webhook	{"path": "/validate-keda-sh-v1alpha1-clustertriggerauthentication"}
+2024-01-13T04:30:23Z	INFO	controller-runtime.metrics	Starting metrics server
+2024-01-13T04:30:23Z	INFO	controller-runtime.metrics	Serving metrics server	{"bindAddress": ":8080", "secure": false}
+2024-01-13T04:30:23Z	INFO	starting server	{"kind": "health probe", "addr": "[::]:8081"}
+2024-01-13T04:30:23Z	INFO	controller-runtime.webhook	Starting webhook server
+2024-01-13T04:30:23Z	INFO	controller-runtime.certwatcher	Updated current TLS certificate
+2024-01-13T04:30:23Z	INFO	controller-runtime.webhook	Serving webhook server	{"host": "", "port": 9443}
+2024-01-13T04:30:23Z	INFO	controller-runtime.certwatcher	Starting certificate watcher

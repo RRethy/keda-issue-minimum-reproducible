@@ -1,0 +1,31 @@
+2024/01/13 04:30:35 maxprocs: Updating GOMAXPROCS=1: determined from CPU quota
+I0113 04:30:35.107726       1 welcome.go:34] keda_metrics_adapter "msg"="Starting metrics server" 
+I0113 04:30:35.107749       1 welcome.go:35] keda_metrics_adapter "msg"="KEDA Version: 2.12.1" 
+I0113 04:30:35.107752       1 welcome.go:36] keda_metrics_adapter "msg"="Git Commit: dc76ca70f19c22e8f0c806f84d95256d771f3dc9" 
+I0113 04:30:35.107755       1 welcome.go:37] keda_metrics_adapter "msg"="Go Version: go1.20.8" 
+I0113 04:30:35.107758       1 welcome.go:38] keda_metrics_adapter "msg"="Go OS/Arch: linux/arm64" 
+I0113 04:30:35.107771       1 welcome.go:39] keda_metrics_adapter "msg"="Running on Kubernetes 1.27" "version"={"major":"1","minor":"27","gitVersion":"v1.27.3","gitCommit":"25b4e43193bcda6c7328a6d147b1fb73a33f1598","gitTreeState":"clean","buildDate":"2023-06-15T00:38:14Z","goVersion":"go1.20.5","compiler":"gc","platform":"linux/arm64"}
+I0113 04:30:35.108159       1 main.go:123] keda_metrics_adapter "msg"="Connecting Metrics Service gRPC client to the server" "address"="keda-operator.keda.svc.cluster.local:9666"
+I0113 04:30:35.111587       1 provider.go:58] keda_metrics_adapter/provider "msg"="starting" 
+I0113 04:30:35.111610       1 main.go:256] keda_metrics_adapter "msg"="starting adapter..." 
+I0113 04:30:35.130833       1 client.go:88] keda_metrics_adapter/provider "msg"="Waiting for establishing a gRPC connection to KEDA Metrics Server" 
+I0113 04:30:35.130860       1 main.go:174] keda_metrics_adapter "msg"="starting /metrics server endpoint" 
+W0113 04:30:35.314193       1 logging.go:59] [core] [Channel #1 SubChannel #2] grpc: addrConn.createTransport failed to connect to {Addr: "keda-operator.keda.svc.cluster.local:9666", ServerName: "keda-operator.keda.svc.cluster.local:9666", }. Err: connection error: desc = "transport: Error while dialing: dial tcp 1.2.3.4:9666: connect: connection refused"
+I0113 04:30:35.573452       1 secure_serving.go:210] Serving securely on [::]:6443
+I0113 04:30:35.573507       1 requestheader_controller.go:169] Starting RequestHeaderAuthRequestController
+I0113 04:30:35.573529       1 shared_informer.go:311] Waiting for caches to sync for RequestHeaderAuthRequestController
+I0113 04:30:35.573556       1 dynamic_serving_content.go:132] "Starting controller" name="serving-cert::/certs/tls.crt::/certs/tls.key"
+I0113 04:30:35.573618       1 tlsconfig.go:240] "Starting DynamicServingCertificateController"
+I0113 04:30:35.573702       1 dynamic_cafile_content.go:157] "Starting controller" name="client-ca-bundle::/certs/ca.crt"
+I0113 04:30:35.573883       1 configmap_cafile_content.go:202] "Starting controller" name="client-ca::kube-system::extension-apiserver-authentication::requestheader-client-ca-file"
+I0113 04:30:35.573933       1 shared_informer.go:311] Waiting for caches to sync for client-ca::kube-system::extension-apiserver-authentication::requestheader-client-ca-file
+I0113 04:30:35.673834       1 shared_informer.go:318] Caches are synced for RequestHeaderAuthRequestController
+I0113 04:30:35.675214       1 shared_informer.go:318] Caches are synced for client-ca::kube-system::extension-apiserver-authentication::requestheader-client-ca-file
+W0113 04:30:36.317387       1 logging.go:59] [core] [Channel #1 SubChannel #2] grpc: addrConn.createTransport failed to connect to {Addr: "keda-operator.keda.svc.cluster.local:9666", ServerName: "keda-operator.keda.svc.cluster.local:9666", }. Err: connection error: desc = "transport: Error while dialing: dial tcp 1.2.3.4:9666: connect: connection refused"
+W0113 04:30:38.232863       1 logging.go:59] [core] [Channel #1 SubChannel #2] grpc: addrConn.createTransport failed to connect to {Addr: "keda-operator.keda.svc.cluster.local:9666", ServerName: "keda-operator.keda.svc.cluster.local:9666", }. Err: connection error: desc = "transport: Error while dialing: dial tcp 1.2.3.4:9666: connect: connection refused"
+W0113 04:30:40.740481       1 logging.go:59] [core] [Channel #1 SubChannel #2] grpc: addrConn.createTransport failed to connect to {Addr: "keda-operator.keda.svc.cluster.local:9666", ServerName: "keda-operator.keda.svc.cluster.local:9666", }. Err: connection error: desc = "transport: Error while dialing: dial tcp 1.2.3.4:9666: connect: connection refused"
+I0113 04:30:45.145334       1 provider.go:66] keda_metrics_adapter/provider "msg"="Connection to KEDA Metrics Service gRPC server has been successfully established" "server"="keda-operator.keda.svc.cluster.local:9666"
+E0113 04:33:46.117968       1 status.go:71] apiserver received an error that is not an metav1.Status: &status.Error{s:(*status.Status)(0x400129cc78)}: rpc error: code = Unknown desc = error when getting metric values no matching metrics found for composite-metric
+E0113 04:34:01.154582       1 status.go:71] apiserver received an error that is not an metav1.Status: &status.Error{s:(*status.Status)(0x400129ce48)}: rpc error: code = Unknown desc = error when getting metric values no matching metrics found for composite-metric
+E0113 04:34:16.184356       1 status.go:71] apiserver received an error that is not an metav1.Status: &status.Error{s:(*status.Status)(0x400129cf08)}: rpc error: code = Unknown desc = error when getting metric values no matching metrics found for composite-metric
+E0113 04:34:31.213910       1 status.go:71] apiserver received an error that is not an metav1.Status: &status.Error{s:(*status.Status)(0x400129d098)}: rpc error: code = Unknown desc = error when getting metric values no matching metrics found for composite-metric
